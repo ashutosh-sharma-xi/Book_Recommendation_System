@@ -1,0 +1,44 @@
+<html>
+    <head><h1>Book Recommendation System</h1>
+        
+    </head>
+    
+    <body background = 'https://editor.analyticsvidhya.com/uploads/94559Untitled%20design#png' height = '100' width = '200' border = '1' >
+        
+
+        <title>Book Recommendation</title>
+
+        <form action="/recommend" method="post">
+            <label for="Book">Enter the Name of a Book you like:</label><br>
+            <input type="text" id="Book" name="user_input" class="form-control"><br>
+            <input type="submit" value="Submit" class="btn btn-lg btn-warning"> 
+
+          </form>
+
+          
+        {%if data%}
+                <div><h3> Recommendation for {{movie_name}}</h3> 
+                </div>
+                <div>
+                    <div>
+                        <img src = '{{data[0][2]}}'> 
+                        <p>'{{data[0][0]}}'<br>'{{data[0][3]}}'<br></p>
+                    </div>
+                </div>
+
+                <h3>The top 5 Recommendations for your book are</h3>
+            {%for i in data[1:]%}
+                <div style="display: flex;">
+                    
+                    <div>
+                        <img src = '{{i[2]}}'> 
+                        <p>'{{i[0]}}'<br>'{{i[3]}}'<br></p>
+                    </div>
+            {%endfor%}
+
+        {%endif%}
+            </div>
+        </div>
+    </body>
+</html>
+

@@ -1,0 +1,7 @@
+venv/ 
+df.pkl 
+books.pkl 
+pred_df,pkl 
+processed_data/ 
+raw_data/ 
+main.py
