@@ -66,7 +66,12 @@ def home():
     return render_template('home.html', b_name=book_name, author=book_auth, url=book_url)
 
 
-@app.route('/recommend_static')
+# @app.route('/recommend_static')
+# def recommend_ui():
+#     return render_template('index.html')
+
+# Added home route
+@app.route('/')
 def recommend_ui():
     return render_template('index.html')
 
