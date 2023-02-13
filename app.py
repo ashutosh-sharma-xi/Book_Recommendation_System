@@ -6,6 +6,7 @@ import pickle
 # getpredictions dataframe and books dataframe
 pred_df = pickle.load(open('pred_df.pkl','rb'))
 books = pickle.load(open('unique_books.pkl','rb'))
+top_50_df = pickle.load(open('top_50_books.pkl','rb'))
 
 
 def recommend_items_by_item(book_name, predictions_df, items_df=None ,topn=10, verbose=False):
@@ -38,7 +39,7 @@ def recommend(name):
     name3 = name.replace(',','')
     name4 = name2.replace(':','')
     global title
-    title = books[books['Title'].str.contains(f'{name}')]['Title'].values 
+    title = books[books['Title'].str.contains(f'{name}|{name2}|{name3}|{name4}')]['Title'].values 
     try: 
         title = title[0] 
         books_recommendations = recommend_items_by_item(title, pred_df, books,topn=6, verbose = True)
@@ -48,6 +49,16 @@ def recommend(name):
 
 
 app = Flask(__name__) 
+
+
+@app.route('/top_20_books')
+def home():
+    book_name = top_50_df.loc[:19,'Book-Title']
+    book_auth = top_50_df.loc[:19,'Author']
+    book_url = top_50_df.loc[:19,'Image_Url']
+
+    return render_template('home.html',b_name = book_name, author = book_auth, url = book_url )
+
 
 @app.route('/recommend_static')
 def recommend_ui():
