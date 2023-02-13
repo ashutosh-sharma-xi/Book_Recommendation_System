@@ -52,7 +52,7 @@ def recommend(name):
 
     # get all book names based on subset of name provided
     title = books[books['Title'].str.contains(f'|'.join(subset))]['Title'].values 
-    title = list(set(title)) 
+    # title = list(set(title)) 
     
     # check how muny similar words in subset are matched from the book titles 
     word_count = []
@@ -86,12 +86,7 @@ def home():
     return render_template('home.html',b_name = book_name, author = book_auth, url = book_url )
 
 
-# @app.route('/recommend_static')
-# def recommend_ui():
-#     return render_template('index.html')
-
-# Added home route
-@app.route('/')
+@app.route('/recommend_static')
 def recommend_ui():
     return render_template('index.html')
 
