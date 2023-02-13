@@ -17,12 +17,12 @@
 
           
         {%if data%}
-                <div><h3> Recommendation for {{movie_name}}</h3> 
+                <div><h3> Recommendation for {{book_name}}</h3> 
                 </div>
                 <div>
                     <div>
                         <img src = '{{data[0][2]}}'> 
-                        <p>'{{data[0][0]}}'<br>'{{data[0][3]}}'<br></p>
+                        <p>{{data[0][0]}}<br>{{data[0][3]}}<br></p>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                     
                     <div>
                         <img src = '{{i[2]}}'> 
-                        <p>'{{i[0]}}'<br>'{{i[3]}}'<br></p>
+                        <p>{{i[0]}}<br>{{i[3]}}<br></p>
                     </div>
             {%endfor%}
 
