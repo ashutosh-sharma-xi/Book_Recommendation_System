@@ -5,3 +5,4 @@ pred_df,pkl
 processed_data/ 
 raw_data/ 
 main.py
+node_modules/
