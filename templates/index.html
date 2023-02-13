@@ -7,6 +7,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dosis:wght@300;500;700&family=Inter:wght@100;200;300;400;500;600;700;900&family=Kanit:wght@600&family=Lato:wght@300;400;700;900&family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Nunito+Sans:wght@200;300;400;600;700;800;900&family=Open+Sans:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800;900&family=Prompt:wght@300;400;500;600;700;800;900&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Righteous&family=Roboto:wght@300;400;500;700;900&family=Rubik:wght@300;400;500;600;700;800&family=Unbounded:wght@200;400;600;800;900&display=swap"
         rel="stylesheet">
+    <link href="{{ url_for('static',filename='static/src/style.css') }}" />
 </head>
 
 <body>
@@ -19,9 +20,8 @@
         <title class="title">Book Recommendation</title>
 
         <form class="form " action="/recommend" method="post">
-            <label class="book_input" for="Book">Enter the Name of a Book you like:</label><br>
-            <input type="text" id="Book" name="user_input" class="form-control"><br>
-            <input type="submit" value="Submit" class="btn btn-lg btn-warning">
+            <input type="text" id="Book" name="user_input" class="form-control" placeholder="Enter book name"><br>
+            <input type="submit" value="Search Book" class="btn btn-lg btn-warning">
             <link rel="stylesheet" href="/static/src/style.css">
 
         </form>
@@ -34,17 +34,18 @@
         <div>
             <div class="card card-main">
                 <img src='{{data[0][2]}}'>
-                <p>'{{data[0][0]}}'<br>'{{data[0][3]}}'<br></p>
+                <p><span class="book">Book: </span>{{data[0][0]}}<br><span class="author">Author:
+                    </span>{{data[0][3]}}<br></p>
             </div>
         </div>
 
         <h3>The top 5 Recommendations for your book are</h3>
         {%for i in data[1:]%}
-        <div>
+        <div class="carousel">
 
-            <div class="card">
-                <img src='{{i[2]}}'>
-                <p>'{{i[0]}}'<br>'{{i[3]}}'<br></p>
+            <div class="card card-seconday">
+                <img src='{{i[2]}}' alt="image">
+                <p><span class="book">Book:</span>{{i[0]}}<br><span class="author">Author:</span>{{i[3]}}<br></p>
             </div>
             {%endfor%}
 
