@@ -32,6 +32,9 @@ nav {
   display: flex;
   gap: 3em;
 }
+.carousel {
+  margin-bottom: 3rem;
+}
 a {
   text-decoration: none;
   color: white;
@@ -107,6 +110,16 @@ span.book {
   padding-right: 0.5em;
 }
 
+/* Home */
+.carousel-home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin-top: 2em;
+}
+
 @media screen and (min-width: 800px) {
   h1 {
     font-size: 3rem;
@@ -135,14 +148,15 @@ span.book {
     /* margin-top: 0.5rem; */
     /* margin-inline: 2rem; */
     /* align-items: ce; */
+    margin-bottom: 0rem;
   }
   .card-seconday {
-    height: 400px;
+    height: 451px;
     width: 250px;
     justify-content: space-between;
   }
   .card-main {
-    height: 400px;
+    height: 431px;
     width: 250px;
     margin-bottom: 1.5rem;
   }
