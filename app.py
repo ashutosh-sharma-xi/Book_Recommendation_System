@@ -39,8 +39,8 @@ def recommend(name):
     title = name
     if len(name) == 0:
         return f"Oops! Please Enter name of the book... Try Again"
-    # split words in name and remove stopwords
-    names = name.strip().split(' ')
+    # split words in name and remove stopwords   
+    names = name.lower().strip().split(' ')
     removed = [names.remove(word) for word in set(sw).intersection(names)]
     subset = []
     if len(names[0]) == 0:
