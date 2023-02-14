@@ -147,11 +147,11 @@ h3 {
 .card img {
   /* height: 80%; */
   object-fit: contain;
-  aspect-ratio: 3/4;
+  aspect-ratio: 3/5.5;
 }
 .card {
   height: 500px;
-  width: 300px;
+  width: 250px;
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
