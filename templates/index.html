@@ -17,6 +17,7 @@
             <a href="/">Recommend</a>
         </nav>
         <h1 class="heading">Book Recommendation System</h1>
+        <p class="text">Recommends 5 books based on your Search.</p>
         <title class="title">Book Recommendation</title>
 
         <form class="form " action="/recommend" method="post">
@@ -29,13 +30,16 @@
 
         {%if data%}
         <div>
-            <h3> Recommendation for {{movie_name}}</h3>
+            <h3> Searched Book</h3>
         </div>
-        <div>
-            <div class="card card-main">
+        <div class="main-book">
+            <div class="left">
                 <img src='{{data[0][2]}}'>
-                <p><span class="book">Book: </span>{{data[0][0]}}<br><span class="author">Author:
-                    </span>{{data[0][3]}}<br></p>
+            </div>
+            <div class="right">
+                <p><span class="book">Book: </span>{{data[0][0]}}</p>
+                <p><span class="author">Author:
+                    </span>{{data[0][3]}}</p>
             </div>
         </div>
 
@@ -45,7 +49,7 @@
 
             <div class="card card-seconday">
                 <img src='{{i[2]}}' alt="image">
-                <p><span class="book">Book:</span>{{i[0]}}<br><span class="author">Author:</span>{{i[3]}}<br></p>
+                <p><span class="book-card">Book:</span>{{i[0]}}<br><span class="author-card">Author:</span>{{i[3]}}<br></p>
             </div>
             {%endfor%}
 
