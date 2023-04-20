@@ -6,3 +6,4 @@ processed_data/
 raw_data/ 
 main.py
 node_modules/
+model.ipynb
